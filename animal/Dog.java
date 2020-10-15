@@ -11,10 +11,8 @@ public class Dog extends Animal{
     }
 
     public Dog(){
-        this.breed = null;
-        this.lifespan = 0;
-        this.behavior = null;
-        this.price = null;
+        super();
+        this.sound = null;
     }
     
 

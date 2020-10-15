@@ -1,11 +1,10 @@
 package animal;
+import Animal.Animal;
 
-public class Dog {
-    private String breed;
-    private int lifespan;
-    private String behavior;
-    private Double price;
-
+public class Dog extends Animal{
+    private String sound;
+    
+    /* comment out for now
     public Dog(String breed, int lifespan, String behavior, double price){
         this.breed = breed;
         this.lifespan = lifespan;
@@ -19,29 +18,12 @@ public class Dog {
         this.behavior = null;
         this.price = null;
     }
+    */
 
-    public void setBreed(String breed){
-        this.breed = breed;
+    public String getSound() {
+        return "Woof!";
     }
-    public void setLifespan(int lifespan){
-        this.lifespan = lifespan;
-    }
-    public void setBehavior(String behavior){
-        this.behavior = behavior;
-    }
-    public void setPrice(Double price){
-        this.price = price;
-    }
-    public String getBreed(){
-        return this.breed;
-    }
-    public int getLifespan(){
-        return this.lifespan;
-    }
-    public String getBehavior(){
-        return this.behavior;
-    }
-    public Double getPrice(){
-        return this.price;
+    public void setSound(String sound){
+        this.sound = sound;   
     }
 }

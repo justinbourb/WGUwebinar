@@ -24,6 +24,13 @@ public class Main extends Application {
         dog1.setLifespan(13);
         dog1.setBehavior("Alert");
         dog1.setPrice(500.0);
+        
+        /* Type casting example:
+        Animal dog2 = new Dog("Bulldog", "Alert", 13, 500.);
+        //((Dog)dog2) casts the Animal obeject as a Dog object
+        //allowing access to the Dog.getSound() method
+        ((Dog)dog2).getSound();
+        */
 
         System.out.println("Breed " + dog1.getBreed());
         System.out.println("Lifespan " + dog1.getLifespan());

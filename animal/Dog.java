@@ -4,12 +4,10 @@ import Animal.Animal;
 public class Dog extends Animal{
     private String sound;
     
-    /* comment out for now
+    
     public Dog(String breed, int lifespan, String behavior, double price){
-        this.breed = breed;
-        this.lifespan = lifespan;
-        this.behavior = behavior;
-        this.price = price;
+        //super sets these attributes on the superclass
+        super(breed, behavior, lifespan, price);
     }
 
     public Dog(){
@@ -18,7 +16,7 @@ public class Dog extends Animal{
         this.behavior = null;
         this.price = null;
     }
-    */
+    
 
     public String getSound() {
         return "Woof!";

@@ -7,7 +7,14 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import animal.Dog;
 
+//init() start() stop() launch() are Application methods
+//launch() calls init() then start()
 public class Main extends Application {
+    
+    @Override 
+    public void init() {
+        
+    }
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -15,6 +22,11 @@ public class Main extends Application {
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
+    }
+    
+    @Override 
+    public void stop() {
+        
     }
 
 

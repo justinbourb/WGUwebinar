@@ -24,17 +24,20 @@ public class mainMenuController implements Initializable {
     
     @FXML
     void onActionCreateAnimal(ActionEvent event) {
-        
+        String value = ((Button)event.getSource()).getText();
+        System.out.println(value + " button clicked!");
     }
     
      @FXML
     void onActionDisplayAnimals(ActionEvent event) {
-        
+        String value = ((Button)event.getSource()).getText();
+        System.out.println(value + " button clicked!");
     }
 
      @FXML
     void onActionExit(ActionEvent event) {
-        
+        String value = ((Button)event.getSource()).getText();
+        System.out.println(value + " button clicked!");
     }
     
     @Override

@@ -1,5 +1,4 @@
-package animal;
-import Animal.Animal;
+package model;
 
 public class Dog extends Animal{
     private String sound;
@@ -7,7 +6,7 @@ public class Dog extends Animal{
     
     public Dog(String breed, int lifespan, String behavior, double price){
         //super sets these attributes on the superclass
-        super(breed, behavior, lifespan, price);
+        super(breed, lifespan, behavior, price);
     }
 
     public Dog(){

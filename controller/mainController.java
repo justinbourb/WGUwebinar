@@ -1,15 +1,34 @@
-package main;
+package controller;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import animal.Dog;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
+import model.Dog;
 
 //init() start() stop() launch() are Application methods
 //launch() calls init() then start()
-public class Main extends Application {
+public class mainController extends Application {
+
+    @FXML
+    private AnchorPane anchorPane;
+
+    @FXML
+    private VBox vbox;
+
+    @FXML
+    private Button createButton;
+
+    @FXML
+    private Button displayButton;
+
+    @FXML
+    private Button exitButton;
     
     @Override 
     public void init() {
@@ -18,7 +37,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../view/mainView.fxml"));
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();

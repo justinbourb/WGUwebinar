@@ -1,4 +1,4 @@
-package animal;
+package model;
 
 public abstract class Animal {
     private String breed;
@@ -35,7 +35,7 @@ public abstract class Animal {
         this.lifespan = lifespan;
     }
     public static void setSeller(String seller){
-        this.seller = seller;   
+        Animal.seller = seller;
     }
     
     //getters
@@ -52,6 +52,6 @@ public abstract class Animal {
         return this.price;
     }
     public static String getSeller(){
-        return this.seller;   
+        return seller;
     }
 }

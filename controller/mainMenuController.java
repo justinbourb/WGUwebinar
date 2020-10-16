@@ -3,7 +3,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
-public class mainController implements Initializable {
+public class mainMenuController implements Initializable {
     
     @FXML
     private AnchorPane anchorPane;

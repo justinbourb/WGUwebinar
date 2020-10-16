@@ -14,21 +14,6 @@ import model.Dog;
 //init() start() stop() launch() are Application methods
 //launch() calls init() then start()
 public class mainController extends Application {
-
-    @FXML
-    private AnchorPane anchorPane;
-
-    @FXML
-    private VBox vbox;
-
-    @FXML
-    private Button createButton;
-
-    @FXML
-    private Button displayButton;
-
-    @FXML
-    private Button exitButton;
     
     @Override 
     public void init() {

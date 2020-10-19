@@ -1,12 +1,15 @@
 package controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
-import javafx.event.ActionEvent;
+
+
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -32,28 +35,29 @@ public class mainMenuController implements Initializable {
 
     @FXML
     private URL location;
-    
+
+
+
     @FXML
-    void onActionCreateAnimal(ActionEvent event) {
-        String value = ((Button)event.getSource()).getText();
-        System.out.println(value + " button clicked!");
+    void onActionCreateAnimal(ActionEvent event) throws IOException {
+        String resourceURL = "/view/CreateAnimalMenu.fxml";
+        switchStage.switchStage(event, resourceURL);
     }
     
      @FXML
-    void onActionDisplayAnimals(ActionEvent event) {
-        String value = ((Button)event.getSource()).getText();
-        System.out.println(value + " button clicked!");
+    void onActionDisplayAnimals(ActionEvent event) throws IOException {
+         String resourceURL = "/view/DisplayAnimalMenu.fxml";
+         switchStage.switchStage(event, resourceURL);
     }
 
      @FXML
     void onActionExit(ActionEvent event) {
-        String value = ((Button)event.getSource()).getText();
-        System.out.println(value + " button clicked!");
+        System.exit(0);
     }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        System.out.println(this.getClass().getName() + " initialized");
+
     }
 
 

@@ -12,11 +12,20 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="anchorPane" prefHeight="231.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CreateAnimalController">
    <children>
-      <VBox fx:id="vbox" layoutY="6.0" prefHeight="217.0" prefWidth="360.0">
+      <VBox fx:id="vbox" alignment="CENTER" layoutY="6.0" prefHeight="300.0" prefWidth="360.0">
          <children>
+            <Label alignment="CENTER" text="Create Animal Menu">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <padding>
+                  <Insets bottom="20.0" />
+               </padding>
+            </Label>
             <GridPane>
               <columnConstraints>
                 <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="175.0" minWidth="10.0" prefWidth="117.0" />
@@ -61,8 +70,8 @@
             </GridPane>
             <HBox fx:id="buttonHbox" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="360.0" spacing="20.0">
                <children>
-                  <Button fx:id="saveButton" mnemonicParsing="false" text="Save" />
-                  <Button fx:id="exitButton" mnemonicParsing="false" text="Exit" />
+                  <Button fx:id="saveButton" mnemonicParsing="false" onAction="#onActionSaveAnimal" text="Save" />
+                  <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#onActionDisplayMainMenu" text="Cancel" />
                </children>
                <padding>
                   <Insets right="20.0" />

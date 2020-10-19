@@ -5,6 +5,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.event.ActionEvent;
+
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.scene.layout.AnchorPane;
@@ -14,8 +16,7 @@ import javafx.scene.layout.VBox;
 
 
 public class AnimalDetailController implements Initializable {
-    
-//TODO: add buttons,fields, etc from SceneBuilder
+
     @FXML
     private AnchorPane anchorPane;
 
@@ -71,14 +72,14 @@ public class AnimalDetailController implements Initializable {
     private Button exitButton;
 
     @FXML
-    void onActionDisplayMainMenu(ActionEvent event) {
-        
+    void onActionDisplayMainMenu(ActionEvent event) throws IOException {
+        String resourceURL = "/view/MainMenu.fxml";
+        switchStage.switchStage(event, resourceURL);
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
-    }
 
+    }
 
 }

@@ -5,7 +5,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import model.Dog;
 
 //init() start() stop() launch() are Application methods
 //launch() calls init() then start()
@@ -18,7 +17,7 @@ public class launcher extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("../view/mainMenuView.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../view/MainMenu.fxml"));
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();

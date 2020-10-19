@@ -8,7 +8,7 @@
 
 <AnchorPane fx:id="anchorPane" maxHeight="200.0" maxWidth="200.0" minHeight="200.0" minWidth="200.0" prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.mainMenuController">
    <VBox fx:id="vbox" alignment="CENTER" maxHeight="200.0" maxWidth="200.0" minHeight="200.0" minWidth="200.0" prefHeight="200.0" prefWidth="200.0" spacing="15.0">
-      <Label fx:id="animalModelLabel" alignment="CENTER" contentDisplay="CENTER" text="Animal Model">
+      <Label fx:id="animalModelLabel" alignment="CENTER" contentDisplay="CENTER" text="Main Menu">
          <font>
             <Font size="24.0" />
          </font>

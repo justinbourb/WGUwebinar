@@ -5,6 +5,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.event.ActionEvent;
+
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.scene.control.RadioButton;
@@ -78,21 +80,23 @@ public class CreateAnimalController implements Initializable {
     private Button saveButton;
 
     @FXML
-    private Button exitButton;
+    private Button cancelButton;
 
     @FXML
-    void onActionSaveAnimal(ActionEvent event) {
-        
+    void onActionSaveAnimal(ActionEvent event) throws IOException {
+        //TODO: add save logic
+        onActionDisplayMainMenu(event);
     }
     
      @FXML
-    void onActionDisplayMainMenu(ActionEvent event) {
-        
+    void onActionDisplayMainMenu(ActionEvent event) throws IOException {
+         String resourceURL = "/view/MainMenu.fxml";
+         switchStage.switchStage(event, resourceURL);
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        System.out.println("initialized");
+
     }
 
 

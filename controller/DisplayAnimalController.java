@@ -6,6 +6,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.event.ActionEvent;
+
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.scene.control.TableColumn;
@@ -50,19 +52,21 @@ public class DisplayAnimalController implements Initializable {
 
 
     @FXML
-    void onActionDisplayAnimalDetailsMenu(ActionEvent event) {
-        
+    void onActionDisplayAnimalDetailsMenu(ActionEvent event) throws IOException {
+        String resourceURL = "/view/AnimalDetailMenu.fxml";
+        switchStage.switchStage(event, resourceURL);
     }
     
      @FXML
-    void onActionDisplayMainMenu(ActionEvent event) {
-        
+    void onActionDisplayMainMenu(ActionEvent event) throws IOException {
+         String resourceURL = "/view/MainMenu.fxml";
+         switchStage.switchStage(event, resourceURL);
     }
 
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        System.out.println("initialized");
+
     }
 
 }

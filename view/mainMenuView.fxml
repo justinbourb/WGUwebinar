@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-            prefHeight="200.0" prefWidth="320.0" xmlns="http://javafx.com/javafx/11.0.1"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.mainMenuController">
-   <VBox fx:id="vbox" alignment="CENTER" prefHeight="200.0" prefWidth="320.0" spacing="15.0">
-      <Button fx:id="createButton" mnemonicParsing="false" onAction="#onActionCreateAnimal" prefWidth="55.0"
-              text="Create"/>
-      <Button fx:id="displayButton" mnemonicParsing="false" text="Display" onAction="#onActionDisplayAnimals"/>
-      <Button fx:id="exitButton" mnemonicParsing="false" prefWidth="55.0" text="Exit" onAction="#onActionExit"/>
+<AnchorPane fx:id="anchorPane" maxHeight="200.0" maxWidth="200.0" minHeight="200.0" minWidth="200.0" prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.mainMenuController">
+   <VBox fx:id="vbox" alignment="CENTER" maxHeight="200.0" maxWidth="200.0" minHeight="200.0" minWidth="200.0" prefHeight="200.0" prefWidth="200.0" spacing="15.0">
+      <Label fx:id="animalModelLabel" alignment="CENTER" contentDisplay="CENTER" text="Animal Model">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="createButton" mnemonicParsing="false" onAction="#onActionCreateAnimal" prefWidth="55.0" text="Create" />
+      <Button fx:id="displayButton" mnemonicParsing="false" onAction="#onActionDisplayAnimals" text="Display" />
+      <Button fx:id="exitButton" mnemonicParsing="false" onAction="#onActionExit" prefWidth="55.0" text="Exit" />
    </VBox>
 </AnchorPane>

@@ -20,7 +20,7 @@ public class launcher extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("../view/mainMenuView.fxml"));
         primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }
     
@@ -30,11 +30,6 @@ public class launcher extends Application {
     }
     
     public static void main(String[] args) {
-        Dog dog1 = new Dog();
-        dog1.setBreed("Doberman");
-        dog1.setLifespan(13);
-        dog1.setBehavior("Alert");
-        dog1.setPrice(500.0);
         
         /* Type casting example:
         Animal dog2 = new Dog("Bulldog", "Alert", 13, 500.);
@@ -43,10 +38,6 @@ public class launcher extends Application {
         ((Dog)dog2).getSound();
         */
 
-        System.out.println("Breed " + dog1.getBreed());
-        System.out.println("Lifespan " + dog1.getLifespan());
-        System.out.println("Behavior " + dog1.getBehavior());
-        System.out.println("Price " + dog1.getPrice());
 
         launch(args);
     }

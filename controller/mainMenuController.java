@@ -6,7 +6,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
-
 import javafx.event.ActionEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -20,6 +19,9 @@ public class mainMenuController implements Initializable {
     private VBox vbox;
 
     @FXML
+    private Label animalModelLabel;
+
+    @FXML
     private Button createButton = new Button();
 
     @FXML
@@ -27,6 +29,9 @@ public class mainMenuController implements Initializable {
 
     @FXML
     private Button exitButton = new Button();
+
+    @FXML
+    private URL location;
     
     @FXML
     void onActionCreateAnimal(ActionEvent event) {
@@ -48,8 +53,9 @@ public class mainMenuController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        System.out.println("initialized");
+        System.out.println(this.getClass().getName() + " initialized");
     }
+
 
 
 

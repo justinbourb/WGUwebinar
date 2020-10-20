@@ -1,17 +1,21 @@
 package model;
 
 public abstract class Animal {
+    private int id;
     private String breed;
     private int lifespan;
     private String behavior;
     private Double price;
     private static String seller;
+    private boolean vaccinated;
 
-    public Animal(String breed, int lifespan, String behavior, double price){
+    public Animal(int id, String breed, int lifespan, String behavior, double price, boolean vaccinated){
+        this.id = id;
         this.breed = breed;
         this.lifespan = lifespan;
         this.behavior = behavior;
         this.price = price;
+        this.vaccinated = vaccinated;
     }
 
     public Animal(){
@@ -22,9 +26,8 @@ public abstract class Animal {
     }
 
     //setters
-    public void setBehavior(String behavior){
-        this.behavior = behavior;
-    }
+    public void setId(int id){ this.id = id; }
+    public void setBehavior(String behavior){ this.behavior = behavior; }
     public void setBreed(String breed){
         this.breed = breed;
     }
@@ -37,8 +40,11 @@ public abstract class Animal {
     public static void setSeller(String seller){
         Animal.seller = seller;
     }
+    public void setVaccinated(boolean vaccinated){ this.vaccinated = vaccinated;}
     
     //getters
+
+    public int getId() { return id; }
     public String getBehavior(){
         return this.behavior;
     }
@@ -54,4 +60,5 @@ public abstract class Animal {
     public static String getSeller(){
         return seller;
     }
+    public boolean getVaccinated() { return this.vaccinated;}
 }

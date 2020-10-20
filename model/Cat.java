@@ -4,9 +4,10 @@ public class Cat extends Animal{
     private String sound;
     
     
-    public Cat (String breed, int lifespan, String behavior, double price){
+    public Cat (int id, String breed, int lifespan, String behavior, double price, boolean vaccinated, String sound){
         //calls the super class constructor
-        super(breed, lifespan, behavior, price);
+        super(id, breed, lifespan, behavior, price, vaccinated);
+        this.sound = sound;
     }
 
     public Cat(){
@@ -17,10 +18,6 @@ public class Cat extends Animal{
     }
     
 
-    public String getSound() {
-        return "Meow!";
-    }
-    public void setSound(String sound){
-        this.sound = sound;   
-    }
+    public String getSound() { return this.sound; }
+    public void setSound(String sound){ this.sound = sound; }
 }

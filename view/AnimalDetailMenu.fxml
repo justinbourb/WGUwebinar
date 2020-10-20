@@ -59,7 +59,7 @@
             </GridPane>
             <HBox fx:id="buttonHbox" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="360.0" spacing="20.0">
                <children>
-                  <Button fx:id="exitButton" mnemonicParsing="false" onAction="#onActionDisplayMainMenu" text="Back" />
+                  <Button fx:id="exitButton" mnemonicParsing="false" onAction="#onActionDisplayAnimalMenu" text="Back" />
                </children>
                <padding>
                   <Insets right="20.0" />

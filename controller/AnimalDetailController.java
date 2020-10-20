@@ -72,8 +72,8 @@ public class AnimalDetailController implements Initializable {
     private Button exitButton;
 
     @FXML
-    void onActionDisplayMainMenu(ActionEvent event) throws IOException {
-        String resourceURL = "/view/MainMenu.fxml";
+    void onActionDisplayAnimalMenu(ActionEvent event) throws IOException {
+        String resourceURL = "/view/DisplayAnimalMenu.fxml";
         switchStage.switchStage(event, resourceURL);
     }
 

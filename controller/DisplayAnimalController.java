@@ -9,12 +9,16 @@ import javafx.event.ActionEvent;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import model.Animal;
+import model.DataProvider;
 
 public class DisplayAnimalController implements Initializable {
 
@@ -26,19 +30,19 @@ public class DisplayAnimalController implements Initializable {
     private VBox vbox;
 
     @FXML
-    private TableView<?> displayAnimalTable;
+    private TableView<Animal> displayAnimalTable;
 
     @FXML
-    private TableColumn<?, ?> idColumn;
+    private TableColumn<Animal, Integer> idColumn;
 
     @FXML
-    private TableColumn<?, ?> breedColumn;
+    private TableColumn<Animal, String> breedColumn;
 
     @FXML
-    private TableColumn<?, ?> lifespanColumn;
+    private TableColumn<Animal, Integer> lifespanColumn;
 
     @FXML
-    private TableColumn<?, ?> priceColumn;
+    private TableColumn<Animal, Double> priceColumn;
 
     @FXML
     private HBox buttonHbox;
@@ -66,7 +70,12 @@ public class DisplayAnimalController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        //the get functions must be named correctly for new PropertyValueFactory<> to magically work
+        displayAnimalTable.setItems(DataProvider.getAllAnimals());
+        idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+        breedColumn.setCellValueFactory(new PropertyValueFactory<>("breed"));
+        lifespanColumn.setCellValueFactory(new PropertyValueFactory<>("lifespan"));
+        priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
     }
 
 }

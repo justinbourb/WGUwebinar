@@ -22,6 +22,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import model.Animal;
 import model.DataProvider;
+import model.Dog;
 
 public class DisplayAnimalController implements Initializable {
 
@@ -71,6 +72,7 @@ public class DisplayAnimalController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         //the get functions must be named correctly for new PropertyValueFactory<> to magically work
+
         displayAnimalTable.setItems(DataProvider.getAllAnimals());
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         breedColumn.setCellValueFactory(new PropertyValueFactory<>("breed"));
@@ -100,6 +102,13 @@ public class DisplayAnimalController implements Initializable {
     }
 
     public boolean search(String searchInput) {
+        /*
+        Purpose: search DataProvider.getAllAnimals() by ID or Breed
+            checks if the input can be converted to an int, if so searches by ID
+            else searches by Breed (assumed input is a string if not an int)
+        Input: searchInput, the string typed into the search field
+        Return: true if a match is found or false if not
+         */
         boolean itsInt;
         int intSearch = -1;
         String stringSearch = null;
@@ -124,6 +133,29 @@ public class DisplayAnimalController implements Initializable {
             }
         }
         //no match, return false
+        return false;
+    }
+
+    public boolean update (int id, Animal animal) {
+        /*
+        Purpose: searches getAllAnimals by id provided, if there is a match, update that index with the animal provided
+        Input: id and animal
+        Return: boolean true if a match is found and updated / false otherwise
+        Notes: very similar to search method, not DRY
+         */
+
+        int index = -1;
+        for (Animal dog : DataProvider.getAllAnimals()) {
+            index++;
+            if (dog.getId() == id) {
+
+                DataProvider.getAllAnimals().set(index, animal);
+                return true;
+            }
+
+        }
+
+
         return false;
     }
 }

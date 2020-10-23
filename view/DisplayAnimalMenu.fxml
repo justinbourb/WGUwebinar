@@ -12,7 +12,7 @@
 
 <AnchorPane fx:id="anchorPane" prefHeight="340.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DisplayAnimalController">
    <children>
-      <VBox fx:id="vbox" alignment="CENTER" layoutY="6.0" prefHeight="340.0" prefWidth="500.0">
+      <VBox fx:id="vbox" alignment="CENTER" layoutY="6.0" prefHeight="340.0" prefWidth="735.0">
          <children>
             <Label text="Display Animal Menu">
                <font>
@@ -21,10 +21,12 @@
             </Label>
             <TableView fx:id="displayAnimalTable" prefHeight="200.0" prefWidth="200.0">
               <columns>
-                <TableColumn fx:id="idColumn" prefWidth="125.0" text="ID" />
-                <TableColumn fx:id="breedColumn" prefWidth="125.0" text="Breed" />
-                  <TableColumn fx:id="lifespanColumn" prefWidth="125.0" text="Lifespan" />
-                  <TableColumn fx:id="priceColumn" prefWidth="125.0" text="Price" />
+                <TableColumn fx:id="idColumn" minWidth="123.0" prefWidth="123.0" text="ID" />
+                <TableColumn fx:id="breedColumn" minWidth="123.0" prefWidth="123.0" text="Breed" />
+                  <TableColumn fx:id="lifespanColumn" minWidth="123.0" prefWidth="123.0" text="Lifespan" />
+                  <TableColumn fx:id="priceColumn" minWidth="123.0" prefWidth="123.0" text="Price" />
+                  <TableColumn fx:id="vaccinatedColumn" minWidth="123.0" prefWidth="123.0" text="Vaccinated" />
+                  <TableColumn fx:id="specialColumn" minWidth="123.0" prefWidth="123.0" text="Special" />
               </columns>
                <VBox.margin>
                   <Insets top="20.0" />

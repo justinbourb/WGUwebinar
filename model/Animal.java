@@ -43,7 +43,6 @@ public abstract class Animal {
     public void setVaccinated(boolean vaccinated){ this.vaccinated = vaccinated;}
     
     //getters
-
     public int getId() { return id; }
     public String getBehavior(){
         return this.behavior;

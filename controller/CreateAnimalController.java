@@ -15,9 +15,11 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import model.Animal;
+import model.DataProvider;
+import model.Dog;
 
-
-
+import javax.xml.crypto.Data;
 
 
 public class CreateAnimalController implements Initializable {
@@ -47,6 +49,9 @@ public class CreateAnimalController implements Initializable {
     private Label vaccinatedLabel;
 
     @FXML
+    private Label specialLabel;
+
+    @FXML
     private TextField idTextField;
 
     @FXML
@@ -60,6 +65,9 @@ public class CreateAnimalController implements Initializable {
 
     @FXML
     private TextField priceTextField;
+
+    @FXML
+    private TextField specialTextField;
 
     @FXML
     private HBox booleanHbox;
@@ -84,7 +92,16 @@ public class CreateAnimalController implements Initializable {
 
     @FXML
     void onActionSaveAnimal(ActionEvent event) throws IOException {
-        //TODO: add save logic
+        int id = Integer.parseInt(idTextField.getText());
+        String breed =  breedTextField.getText();
+        int lifespan = Integer.parseInt(lifespanTextField.getText());
+        String behavior = behaviorTextField.getText();
+        Double price = Double.parseDouble(priceTextField.getText());
+        String special = specialTextField.getText();
+        boolean vaccinated = (radioYes.isSelected());
+
+        Dog dog = new Dog(id, breed, lifespan, behavior, price, vaccinated, special);
+        DataProvider.addAnimal(dog);
         onActionDisplayMainMenu(event);
     }
     

@@ -16,7 +16,7 @@
 
 <AnchorPane fx:id="anchorPane" prefHeight="231.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CreateAnimalController">
    <children>
-      <VBox fx:id="vbox" alignment="CENTER" layoutY="6.0" prefHeight="300.0" prefWidth="360.0">
+      <VBox fx:id="vbox" alignment="CENTER" layoutY="6.0" prefHeight="339.0" prefWidth="360.0">
          <children>
             <Label alignment="CENTER" text="Create Animal Menu">
                <font>
@@ -35,6 +35,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -63,6 +64,8 @@
                         <Insets left="50.0" top="5.0" />
                      </padding>
                   </HBox>
+                  <Label fx:id="specialLabel" text="Special" GridPane.rowIndex="6" />
+                  <TextField fx:id="specialTextField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                </children>
                <padding>
                   <Insets right="20.0" />
@@ -70,12 +73,18 @@
             </GridPane>
             <HBox fx:id="buttonHbox" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="360.0" spacing="20.0">
                <children>
-                  <Button fx:id="saveButton" mnemonicParsing="false" onAction="#onActionSaveAnimal" text="Save" />
+                  <Button fx:id="saveButton" mnemonicParsing="false" onAction="#onActionSaveAnimal" text="Save">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin></Button>
                   <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#onActionDisplayMainMenu" text="Cancel" />
                </children>
                <padding>
                   <Insets right="20.0" />
                </padding>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
             </HBox>
          </children>
       </VBox>

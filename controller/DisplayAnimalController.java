@@ -2,6 +2,7 @@ package controller;
 
 
 
+import com.sun.scenario.animation.shared.ClipEnvelope;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -45,6 +46,12 @@ public class DisplayAnimalController implements Initializable {
     private TableColumn<Animal, Double> priceColumn;
 
     @FXML
+    private TableColumn<Animal, Boolean> vaccinatedColumn;
+
+    @FXML
+    private TableColumn<Animal, String> specialColumn;
+
+    @FXML
     private HBox buttonHbox;
 
     @FXML
@@ -52,8 +59,6 @@ public class DisplayAnimalController implements Initializable {
 
     @FXML
     private Button backButton;
-
-
 
     @FXML
     void onActionDisplayAnimalDetailsMenu(ActionEvent event) throws IOException {
@@ -76,6 +81,8 @@ public class DisplayAnimalController implements Initializable {
         breedColumn.setCellValueFactory(new PropertyValueFactory<>("breed"));
         lifespanColumn.setCellValueFactory(new PropertyValueFactory<>("lifespan"));
         priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
+        vaccinatedColumn.setCellValueFactory(new PropertyValueFactory<>("vaccinated"));
+        specialColumn.setCellValueFactory(new PropertyValueFactory<>("special"));
     }
 
 }

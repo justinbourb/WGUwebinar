@@ -99,7 +99,7 @@ public class DisplayAnimalController implements Initializable {
     @FXML
     void onKeyReleasedSearchText(javafx.scene.input.KeyEvent keyEvent) throws IOException {
         //This should be covered in a future webinar
-        System.out.println(searchTextField.getText() + " entered into search");
+
         search(searchTextField.getText());
         displayAnimalTable.setItems(DataProvider.getFilteredAnimals());
     }
@@ -124,7 +124,7 @@ public class DisplayAnimalController implements Initializable {
     }
 
 
-    public ObservableList<Animal> search(String searchInput) throws IOException {
+    public void search(String searchInput) throws IOException {
         /*
         Purpose: search DataProvider.getAllAnimals() by ID or Breed
             checks if the input can be converted to an int, if so searches by ID
@@ -160,7 +160,7 @@ public class DisplayAnimalController implements Initializable {
             }
         }
 
-        return DataProvider.getFilteredAnimals();
+
     }
 
     public Animal selectAnimal(int id){

@@ -48,7 +48,7 @@ public class launcher extends Application {
         Animal dog5 = new Dog(5, "Anatolian Shepherd", 12, "Intelligent", 2599.99, false, "Fetches");
         Dog dog6 = new Dog(5, "Anatolian Shepherd", 12, "Intelligent", 2599.99, false, "Fetches");
         ArrayList<Animal> animalArrayList = new ArrayList<>(Arrays.asList(dog1, dog2, dog3, dog4, dog5));
-        System.out.println(((Dog)dog4).getSpecial());
+
         //for each Animal object in animalArrayList
         for (Animal animal : animalArrayList) {
             DataProvider.addAnimal(animal);

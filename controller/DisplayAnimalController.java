@@ -77,6 +77,7 @@ public class DisplayAnimalController implements Initializable {
         priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
         vaccinatedColumn.setCellValueFactory(new PropertyValueFactory<>("vaccinated"));
         specialColumn.setCellValueFactory(new PropertyValueFactory<>("special"));
+        displayAnimalTable.getSelectionModel().select(0);
         //selects the row provided in the tableView
         //displayAnimalTable.getSelectionModel().select(selectAnimal(5));
     }
@@ -85,6 +86,7 @@ public class DisplayAnimalController implements Initializable {
     //onAction and onKeyReleased
     @FXML
     void onActionDisplayAnimalDetailsMenu(ActionEvent event) throws IOException {
+        DataProvider.selectedIndex = displayAnimalTable.getSelectionModel().getFocusedIndex();
         String resourceURL = "/view/AnimalDetailMenu.fxml";
         switchStage.switchStage(event, resourceURL);
     }

@@ -41,14 +41,14 @@ public class launcher extends Application {
         //allowing access to the Dog.getSound() method
         ((Dog)dog2).getSound();
         */
-        Dog dog1 = new Dog(1, "Siberian Husky", 15, "Crafty", 599.99, true, "Whistles");
-        Dog dog2 = new Dog(2, "Alaskan Malamute", 12, "Energetic", 999.99, true, "Climbs");
-        Dog dog3 = new Dog(3, "Dalmatian", 15, "Energetic", 1999.99, true, "Gymnastics");
-        Dog dog4 = new Dog(4, "Dogo Argentino", 12, "Protective", 1599.99, true, "Rolls Over");
-        Dog dog5 = new Dog(5, "Anatolian Shepherd", 12, "Intelligent", 2599.99, false, "Fetches");
-
+        Animal dog1 = new Dog(1, "Siberian Husky", 15, "Crafty", 599.99, true, "Whistles");
+        Animal dog2 = new Dog(2, "Alaskan Malamute", 12, "Energetic", 999.99, true, "Climbs");
+        Animal dog3 = new Dog(3, "Dalmatian", 15, "Energetic", 1999.99, true, "Gymnastics");
+        Animal dog4 = new Dog(4, "Dogo Argentino", 12, "Protective", 1599.99, true, "Rolls Over");
+        Animal dog5 = new Dog(5, "Anatolian Shepherd", 12, "Intelligent", 2599.99, false, "Fetches");
+        Dog dog6 = new Dog(5, "Anatolian Shepherd", 12, "Intelligent", 2599.99, false, "Fetches");
         ArrayList<Animal> animalArrayList = new ArrayList<>(Arrays.asList(dog1, dog2, dog3, dog4, dog5));
-
+        System.out.println(((Dog)dog4).getSpecial());
         //for each Animal object in animalArrayList
         for (Animal animal : animalArrayList) {
             DataProvider.addAnimal(animal);

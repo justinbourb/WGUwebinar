@@ -80,8 +80,10 @@ public class DisplayAnimalController implements Initializable {
         priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
         vaccinatedColumn.setCellValueFactory(new PropertyValueFactory<>("vaccinated"));
         specialColumn.setCellValueFactory(new PropertyValueFactory<>("special"));
+        //selects the row provided in the tableView
+        //displayAnimalTable.getSelectionModel().select(selectAnimal(5));
     }
-
+    //onAction and onKeyReleased
     @FXML
     void onActionDisplayAnimalDetailsMenu(ActionEvent event) throws IOException {
         String resourceURL = "/view/AnimalDetailMenu.fxml";
@@ -99,6 +101,25 @@ public class DisplayAnimalController implements Initializable {
         //This should be covered in a future webinar
         System.out.println(searchTextField.getText() + " entered into search");
         System.out.println("Search results: " + search(searchTextField.getText()));
+    }
+
+    //other functions
+
+    public boolean delete (int id){
+        /*
+        Purpose: removes the specified animal from getAllAnimals by id provided
+        Input: id and animal
+        Return: boolean true if animal is removed / false otherwise
+        Notes: very similar to search method, not DRY
+         */
+
+        for (Animal dog : DataProvider.getAllAnimals()) {
+            if (dog.getId() == id) {
+                //returns true if removed
+                return DataProvider.getAllAnimals().remove(dog);
+            }
+        }
+        return false;
     }
 
     public boolean search(String searchInput) {
@@ -136,6 +157,22 @@ public class DisplayAnimalController implements Initializable {
         return false;
     }
 
+    public Animal selectAnimal(int id){
+        /*
+        Purpose: returns the specified animal from getAllAnimals by id provided
+        Input: id
+        Return: the animal object found
+        Notes: very similar to search method, not DRY
+         */
+
+        for (Animal dog : DataProvider.getAllAnimals()) {
+            if (dog.getId() == id) {
+                return dog;
+            }
+        }
+        return null;
+    }
+
     public boolean update (int id, Animal animal) {
         /*
         Purpose: searches getAllAnimals by id provided, if there is a match, update that index with the animal provided
@@ -154,8 +191,6 @@ public class DisplayAnimalController implements Initializable {
             }
 
         }
-
-
         return false;
     }
 }

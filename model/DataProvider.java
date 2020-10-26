@@ -10,4 +10,8 @@ public class DataProvider {
     public static void addAnimal (Animal animal) { allAnimals.add(animal); }
 
     public static ObservableList<Animal> getAllAnimals() { return allAnimals; }
+
+    public static void addFilteredAnimal (Animal animal) { filteredAnimals.add(animal); }
+
+    public static ObservableList<Animal> getFilteredAnimals() { return filteredAnimals; }
 }

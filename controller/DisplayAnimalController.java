@@ -2,16 +2,14 @@ package controller;
 
 
 
-import com.sun.scenario.animation.shared.ClipEnvelope;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.event.ActionEvent;
 
-import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.net.URL;
-import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -22,7 +20,6 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import model.Animal;
 import model.DataProvider;
-import model.Dog;
 
 public class DisplayAnimalController implements Initializable {
 
@@ -83,6 +80,8 @@ public class DisplayAnimalController implements Initializable {
         //selects the row provided in the tableView
         //displayAnimalTable.getSelectionModel().select(selectAnimal(5));
     }
+
+
     //onAction and onKeyReleased
     @FXML
     void onActionDisplayAnimalDetailsMenu(ActionEvent event) throws IOException {
@@ -96,11 +95,11 @@ public class DisplayAnimalController implements Initializable {
          switchStage.switchStage(event, resourceURL);
     }
     @FXML
-    void onKeyReleasedSearchText(javafx.scene.input.KeyEvent keyEvent) {
-        //TODO: search() is working correctly, need to then filter results on screen.
+    void onKeyReleasedSearchText(javafx.scene.input.KeyEvent keyEvent) throws IOException {
         //This should be covered in a future webinar
         System.out.println(searchTextField.getText() + " entered into search");
-        System.out.println("Search results: " + search(searchTextField.getText()));
+        search(searchTextField.getText());
+        displayAnimalTable.setItems(DataProvider.getFilteredAnimals());
     }
 
     //other functions
@@ -122,7 +121,8 @@ public class DisplayAnimalController implements Initializable {
         return false;
     }
 
-    public boolean search(String searchInput) {
+
+    public ObservableList<Animal> search(String searchInput) throws IOException {
         /*
         Purpose: search DataProvider.getAllAnimals() by ID or Breed
             checks if the input can be converted to an int, if so searches by ID
@@ -133,6 +133,10 @@ public class DisplayAnimalController implements Initializable {
         boolean itsInt;
         int intSearch = -1;
         String stringSearch = null;
+        //check if filtered list contains data
+        if (!(DataProvider.getFilteredAnimals().isEmpty())){
+            DataProvider.getFilteredAnimals().clear();
+        }
         //check if the search input is an int or a string
         try {
             intSearch = Integer.parseInt(searchInput, 10);
@@ -145,16 +149,16 @@ public class DisplayAnimalController implements Initializable {
         for (Animal dog : DataProvider.getAllAnimals()){
             if (itsInt){
                 if(dog.getId() == intSearch){
-                    return true;
+                    DataProvider.getFilteredAnimals().add(dog);
                 }
             } else {
                 if(dog.getBreed().contains(stringSearch)){
-                    return true;
+                    DataProvider.getFilteredAnimals().add(dog);
                 }
             }
         }
-        //no match, return false
-        return false;
+
+        return DataProvider.getFilteredAnimals();
     }
 
     public Animal selectAnimal(int id){

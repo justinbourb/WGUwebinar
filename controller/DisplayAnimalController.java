@@ -98,8 +98,6 @@ public class DisplayAnimalController implements Initializable {
     }
     @FXML
     void onKeyReleasedSearchText(javafx.scene.input.KeyEvent keyEvent) throws IOException {
-        //This should be covered in a future webinar
-
         search(searchTextField.getText());
         displayAnimalTable.setItems(DataProvider.getFilteredAnimals());
     }
